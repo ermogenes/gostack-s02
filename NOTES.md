@@ -242,3 +242,56 @@ dist
 ```
 
 💡 ESLint will now ignore `.js` in root (like `prettier.config.js`), and all files in `node_modules` and `dist`.
+
+## Debug on VsCode
+
+Create `launch.json`:
+
+![](NOTES_launch.png)
+
+Select `Node.js` option and edit the file.
+
+Remove:
+```json
+"program": "${workspaceFolder}\\index.js"
+```
+
+Change:
+```json
+"request": "attach",
+"name": "Attach to running ts-node-dev",
+```
+
+Add:
+```json
+"protocol": "inspector",
+"restart": true,
+```
+
+It will became something like this:
+```json
+    "configurations": [
+        {
+            "type": "node",
+            "request": "attach",
+            "protocol": "inspector",
+            "restart": true,
+            "name": "Attach to running ts-node-dev",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+        }
+    ]
+```
+
+Edit the `dev:server` script to run on inspect mode:
+
+```json
+"dev:server": "ts-node-dev --inspect --transpileOnly --ignore-watch node_modules src/server.ts"
+```
+
+- `--inspect` tells ts-node-dev to expose debug info via WebSockets.
+
+💡 You may create a new script, like `yarn debug` and keep `yarn dev:server` untouched.
+
+_Run your script first, then debug via VsCode._

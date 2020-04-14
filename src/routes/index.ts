@@ -8,4 +8,12 @@ routes.get('/', (request, response) =>
   }),
 );
 
+routes.post('/users', (request, response) => {
+  const { name, email } = request.body;
+
+  const user = { name, email };
+
+  response.json(user);
+});
+
 export default routes;
