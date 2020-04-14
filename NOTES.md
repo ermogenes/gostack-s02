@@ -173,3 +173,29 @@ On `settings.json`, you may enforce ESLint fixes after saving (✨ magic!):
 ```
 git config --global core.autocrlf false
 ```
+
+Adittional steps:
+
+Install ESLint support for TypeScript imports:
+```
+yarn add eslint-import-resolver-typescript -D
+```
+
+Configure it in `.eslintrc.json`:
+
+```json
+  "rules": {
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never"
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  }
+```
