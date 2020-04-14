@@ -101,3 +101,75 @@ insert_final_newline = true
 ```
 
 💡 There's plugins for most editors and IDEs.
+
+**ESLint**
+
+Install:
+```
+yarn add eslint -D
+```
+
+Initialize:
+```
+yarn eslint --init
+```
+
+My selected options:
+```
+? How would you like to use ESLint? To check syntax, find problems, and enforce code style
+? What type of modules does your project use? JavaScript modules (import/export)
+? Which framework does your project use? None of these
+? Does your project use TypeScript? Yes
+? Where does your code run? Node
+? How would you like to define a style for your project? Use a popular style guide
+? Which style guide do you want to follow? Airbnb: https://github.com/airbnb/javascript
+? What format do you want your config file to be in? JSON
+```
+
+Dependencies will be listed:
+
+```
+@typescript-eslint/eslint-plugin@latest eslint-config-airbnb-base@latest eslint@^5.16.0 || ^6.8.0 eslint-plugin-import@^2.20.1 @typescript-eslint/parser@latest
+```
+
+When asked `? Would you like to install them now with npm? (Y/n)`, when using `yarn`, answer `no` and manually install listed dependencies.
+
+Installing with `yarn`, removing previous installed `eslint`:
+```
+yarn add @typescript-eslint/eslint-plugin@latest eslint-config-airbnb-base@latest eslint-plugin-import@^2.20.1 @typescript-eslint/parser@latest
+```
+
+At the end, the `.eslintrc.json` file is created.
+
+💡 VsCode support: install `ESLint` extension.
+
+On `settings.json`, you may enforce ESLint fixes after saving (✨ magic!):
+
+```json
+    "[javascript]": {
+      "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+      }
+    },
+    "[javascriptreact]": {
+      "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+      }
+    },
+    "[typescript]": {
+      "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+      }
+    },
+    "[typescriptreact]": {
+      "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+      }
+    },
+```
+
+🗨 git will auto convert LF to CRLF on Windows. To disable:
+
+```
+git config --global core.autocrlf false
+```
