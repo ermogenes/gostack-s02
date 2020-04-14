@@ -207,28 +207,19 @@ Install:
 yarn add prettier eslint-config-prettier eslint-plugin-prettier -D
 ```
 
-Configure it in `.eslintrc.json`:
+Configure it in `.eslintrc.json` (_add the new, keep preexistent_):
 
 ```json
   "extends": [
-    // keep preexistent
-    "airbnb-base",
-    // add the new, bellow
     "plugin:@typescript-eslint/recommended",
     "prettier/@typescript-eslint",
     "plugin:prettier/recommended"
   ],
-  // ...
   "plugins": [
-    // keep preexistent
-    "@typescript-eslint",
-    // add the new, bellow
     "prettier"
   ],
   "rules": {
     "prettier/prettier": "error",
-    // keep the others
-    // ...
   },
 ```
 
