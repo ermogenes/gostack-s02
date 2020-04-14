@@ -199,3 +199,55 @@ Configure it in `.eslintrc.json`:
     }
   }
 ```
+
+**Prettier**
+
+Install:
+```
+yarn add prettier eslint-config-prettier eslint-plugin-prettier -D
+```
+
+Configure it in `.eslintrc.json`:
+
+```json
+  "extends": [
+    // keep preexistent
+    "airbnb-base",
+    // add the new, bellow
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended"
+  ],
+  // ...
+  "plugins": [
+    // keep preexistent
+    "@typescript-eslint",
+    // add the new, bellow
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    // keep the others
+    // ...
+  },
+```
+
+Add `prettier.config.js`:
+
+```js
+module.exports = {
+  singleQuote: true,
+  trailingComma: 'all',
+  arrowParens: 'avoid',
+};
+```
+
+Create `.eslintignore`:
+
+```
+/*.js
+node_modules
+dist
+```
+
+💡 ESLint will now ignore `.js` in root (like `prettier.config.js`), and all files in `node_modules` and `dist`.
