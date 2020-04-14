@@ -4,19 +4,19 @@ Study files for Rocketseat's GoStack week 2 (level 02).
 
 ## Content
 
-* [Class notes](./docs/notes/)
-* A boilerplate Express application
-* _⏳ in progress..._
+* [📝 Class notes](./docs/notes/)
+* A boilerplate Express application (`yarn dev:server` to run)
+* _⏳ work in progress..._
 
 ## Tags description
 
 * `step1` implements _Primeiro projeto com Node.JS / Estrutura e padrões_ classes.
-* _⏳ in progress..._
+* _⏳ work in progress..._
 
 ## Challenges
 
-* [Fundamentos Node.js](#) ⏳
-* [Database upload](#) ⏳
+* [Fundamentos Node.js](#) _⏳ work in progress..._
+* [Database upload](#) _⏳ work in progress..._
 
 ---
 
