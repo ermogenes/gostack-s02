@@ -3,7 +3,9 @@
 Study files for Rocketseat's GoStack week 2 (level 02).
 
 ## Content
- _loading..._
+
+ * [Class notes](./docs/notes/)
+ * _loading..._
 
 ## Tags description
  _loading..._

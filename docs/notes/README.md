@@ -247,7 +247,7 @@ dist
 
 Create `launch.json`:
 
-![](NOTES_launch.png)
+![](launchjson.png)
 
 Select `Node.js` option and edit the file.
 
