@@ -375,3 +375,17 @@ yarn typeorm migration:run
 - `yarn typeorm migration:show` show available migrations, with status
 - `yarn typeorm migration:revert` revert last migration
 - `yarn typeorm migration:run` run migration to up-to-date version
+
+Enabling decorators on TypeScript, in `tsconfig.json`:
+
+```json
+    /* Experimental Options */
+    "experimentalDecorators": true,        /* Enables experimental support for ES7 decorators. */
+    "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
+```
+
+Also disable errors on imports and property non-initialization:
+```json
+    "strictPropertyInitialization": false,    /* Enable strict checking of property initialization in classes. */
+    "allowSyntheticDefaultImports": true,     /* Allow default imports from modules with no default export. This does not affect code emit, just typechecking. */
+```
