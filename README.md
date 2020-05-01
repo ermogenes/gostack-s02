@@ -11,11 +11,12 @@ Study files for Rocketseat's GoStack week 2 (level 02).
 ## Tags description
 
 * `step1` implements _Primeiro projeto com Node.JS / Estrutura e padrões_ classes.
+* `step2` implements _Primeiro projeto com Node.JS / Construindo Aplicação_ classes.
 * _⏳ work in progress..._
 
 ## Challenges
 
-* [Fundamentos Node.js](#) _⏳ work in progress..._
+* [Fundamentos Node.js](https://github.com/ermogenes/gostack-s02-desafio-fundamentos-nodejs) ✔
 * [Database upload](#) _⏳ work in progress..._
 
 ---
