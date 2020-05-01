@@ -364,3 +364,14 @@ yarn typeorm migration:create -n CreateAppointments
 ```
 
 Now you can write `up` and `down` methods.
+
+After write the migration, run it:
+
+```
+yarn typeorm migration:run
+```
+
+💡 TypeORM migration tips:
+- `yarn typeorm migration:show` show available migrations, with status
+- `yarn typeorm migration:revert` revert last migration
+- `yarn typeorm migration:run` run migration to up-to-date version
