@@ -295,3 +295,45 @@ Edit the `dev:server` script to run on inspect mode:
 💡 You may create a new script, like `yarn debug` and keep `yarn dev:server` untouched.
 
 _Run your script first, then debug via VsCode._
+
+## Persistence
+
+Relational DB access abstractions/strategies:
+
+- write your query using a DB driver like `node-postgres`;
+- use a query builder like `Knex.js`;
+- use a ORM, like `sequelize` or `TypeORM`.
+
+Configure Postgres container:
+
+`docker run --name gostack-postgres -e POSTGRES_PASSWORD=gostack -p 5432:5432 -d postgres`
+
+💡 Docker tips:
+- `docker ps` lists all running `docker` containers
+- `docker ps -a` lists all `docker` containers and status
+- `docker logs <ID>` shows logs of a container
+- `docker stop <ID>` stops a container
+- `docker start <ID>` starts a container
+
+Install TypeORM:
+
+```
+yarn add typeorm pg
+```
+
+... or `mysql`, `sqlite3`, `mssql`, `oracledb`...
+
+Configure TypeORM in `ormconfig.json`:
+
+```json
+{
+  "type": "postgres",
+  "host": "localhost",
+  "port": 5432,
+  "username": "postgres",
+  "password": "gostack",
+  "database": "gostack_gobarber"
+}
+```
+
+If database doesn't exists (`error: database "gostack_gobarber" does not exist`), create it (_you may use DBeaver_).
