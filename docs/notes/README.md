@@ -337,3 +337,30 @@ Configure TypeORM in `ormconfig.json`:
 ```
 
 If database doesn't exists (`error: database "gostack_gobarber" does not exist`), create it (_you may use DBeaver_).
+
+Add migrations support in `ormconfig.json`:
+
+```json
+  "migrations": [
+    "./src/database/migrations/*.ts"
+  ],
+  "cli": {
+    "migrationsDir": "./src/database/migrations"
+  }
+```
+
+Add a script on `package.json`:
+
+```json
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
+```
+
+Now you can run TypeORM CLI with `yarn typeorm`.
+
+Create a migration:
+
+```
+yarn typeorm migration:create -n CreateAppointments
+```
+
+Now you can write `up` and `down` methods.
