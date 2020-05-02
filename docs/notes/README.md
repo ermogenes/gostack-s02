@@ -389,3 +389,17 @@ Also disable errors on imports and property non-initialization:
     "strictPropertyInitialization": false,    /* Enable strict checking of property initialization in classes. */
     "allowSyntheticDefaultImports": true,     /* Allow default imports from modules with no default export. This does not affect code emit, just typechecking. */
 ```
+
+😫 The TypeORM has dependency on `reflect-metadata`. You must run this, and import it on your application to use decorators:
+
+```
+yarn add reflect-metadata
+```
+
+Finnaly, you must point `ormconfig.json` to your entities:
+
+```json
+  "entities": [
+    "./src/models/*.ts"
+  ],
+```
