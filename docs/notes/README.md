@@ -403,3 +403,9 @@ Finnaly, you must point `ormconfig.json` to your entities:
     "./src/models/*.ts"
   ],
 ```
+
+🍌 ESLint may mark some fieldnames-like variable names with errors. To disable, add a rule in `.eslintrc.json`:
+
+```json
+    "@typescript-eslint/camelcase": "off",
+```
