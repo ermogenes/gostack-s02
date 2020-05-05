@@ -409,3 +409,15 @@ Finnaly, you must point `ormconfig.json` to your entities:
 ```json
     "@typescript-eslint/camelcase": "off",
 ```
+
+## Security
+
+Password criptography, using `bcryptjs`:
+
+```
+yarn add bcryptjs
+yarn add -D @types/bcryptjs
+```
+
+The `hash` function can be used to create salted-hash strings.
+
