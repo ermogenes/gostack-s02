@@ -412,8 +412,6 @@ Finnaly, you must point `ormconfig.json` to your entities:
 
 ## Security
 
-### Crypto
-
 Password criptography, using `bcryptjs`:
 
 ```
@@ -423,7 +421,7 @@ yarn add -D @types/bcryptjs
 
 The `hash` function can be used to create salted-hash strings.
 
-### Auth
+Bearer Token Authentication:
 
 JWT - JSON Web Tokens ([RFC 7519](https://tools.ietf.org/html/rfc7519))
 
@@ -469,4 +467,13 @@ Installl packages:
 ```
 yarn add jsonwebtoken
 yarn add -D @types/jsonwebtoken
+```
+
+## Image upload
+
+Install `multer` middleware:
+
+```
+yarn add multer
+yarn add -D @types/multer
 ```
