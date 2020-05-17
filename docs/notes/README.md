@@ -412,6 +412,8 @@ Finnaly, you must point `ormconfig.json` to your entities:
 
 ## Security
 
+### Crypto
+
 Password criptography, using `bcryptjs`:
 
 ```
@@ -421,3 +423,50 @@ yarn add -D @types/bcryptjs
 
 The `hash` function can be used to create salted-hash strings.
 
+### Auth
+
+JWT - JSON Web Tokens ([RFC 7519](https://tools.ietf.org/html/rfc7519))
+
+Three strings base64-encoded joined by ".":
+  * A header with metadata;
+  * A payload;
+  * A message auth code (MAC).
+
+Example:
+
+```
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1ODk3MjEyMDksImV4cCI6MTU4OTgwNzYwOSwic3ViIjoiNTk4NDhhMjItNzU0OC00ODUzLWI5MzgtMmM0MDU2ZWFlNzY4In0.6Uvob8DiEgbXrqmE48VZ8tS3f_KWQKKvAHvq4eLhKeQ
+```
+
+That means... _([online decoder](https://jwt.io/))_
+
+Header:
+```json
+{
+  "alg": "HS256",
+  "typ": "JWT"
+}
+```
+
+Payload:
+```json
+{
+  "iat": 1589721209,
+  "exp": 1589807609,
+  "sub": "59848a22-7548-4853-b938-2c4056eae768"
+}
+```
+
+Claims:
+- `iat` stands for "Issued Time";
+- `exp` stands for "Expiration Time";
+- `sub` stands for "Subject", may be the user id.
+
+Users should send a valid token at header `Authorization` in `Bearer {token}` format.
+
+Installl packages:
+
+```
+yarn add jsonwebtoken
+yarn add -D @types/jsonwebtoken
+```
