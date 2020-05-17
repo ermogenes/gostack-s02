@@ -477,3 +477,24 @@ Install `multer` middleware:
 yarn add multer
 yarn add -D @types/multer
 ```
+
+## Error handling
+
+Install `express-async-errors` to tell Express how to globally catch async errors on a middleware:
+
+```
+yarn add express-async-errors
+```
+
+Without it, the error handling middleware won't trigger.
+
+🍌 ESLint may mark some unused mandatory parameter names with errors. To disable, add a rule in `.eslintrc.json` and rename those unused parameters like `_`:
+
+```json
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "_"
+      }
+    ],
+```
