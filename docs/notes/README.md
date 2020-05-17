@@ -410,6 +410,13 @@ Finnaly, you must point `ormconfig.json` to your entities:
     "@typescript-eslint/camelcase": "off",
 ```
 
+🍌 If `postgres` do not recongize uuid fields default generator, you should install the extension on migration:
+
+```js
+        // this ensure we can use default: `uuid_generate_v4()`
+        await queryRunner.query(`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`);
+```
+
 ## Security
 
 Password criptography, using `bcryptjs`:
