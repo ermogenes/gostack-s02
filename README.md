@@ -22,7 +22,7 @@ Study files for Rocketseat's GoStack week 2 (level 02).
 ## Challenges
 
 * [Fundamentos Node.js](https://github.com/ermogenes/gostack-s02-desafio-fundamentos-nodejs) ✔
-* [Database upload](https://github.com/ermogenes/gostack-s02-desafio-database-upload) _⏳ work in progress..._
+* [Database upload](https://github.com/ermogenes/gostack-s02-desafio-database-upload) ✔
 
 ---
 
